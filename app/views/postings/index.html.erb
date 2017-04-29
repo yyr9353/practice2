@@ -16,6 +16,12 @@
 <% @all_postings.each do |p| %>
    <h3>Title: <%= p.title %></h3>
    <p>Content: <%= p.posting_content %></p>
+   
+   <% @all_comments.each do |c| %>
+       <% if c.posting_id == p.id %>
+           <p><%= c.comment_content %></p>
+       <% end %>
+   <% end %>
 
 <form action="/comments/create" method="POST">
     <div class="form-group">
