@@ -1,5 +1,6 @@
 class PostingsController < ApplicationController
     def index
+        @all_postings = Posting.all 
     end
     
     def create
